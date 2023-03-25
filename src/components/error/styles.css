@@ -1,0 +1,15 @@
+.error-message {
+    color: #fff;
+    background-color: #f44336;
+    padding: 1rem;
+    border-radius: 0.25rem;
+    text-align: center;
+    margin: 1rem auto;
+    max-width: 50%;
+  }
+  
+  .error-message h3 {
+    font-size: 1.5rem;
+    margin: 0;
+    font-weight: bold;
+  }

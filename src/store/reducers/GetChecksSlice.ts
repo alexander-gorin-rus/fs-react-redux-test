@@ -1,5 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { IGetChecks } from "../../models/IGetChecks";
+import { fetchChecks } from "./ActionCreator";
 
 
 interface ICheckState {
@@ -17,17 +18,17 @@ const initialState: ICheckState = {
 export const checksSlice = createSlice({
     name: 'check',
     initialState,
-    reducers: {
-        checksFetching(state) {
+    reducers: {},
+    extraReducers: {
+        [fetchChecks.fulfilled.type]: (state, action: PayloadAction<IGetChecks[]>) => {
+            state.checks = action.payload;
+            state.isLoading = false;
+            state.error = ''
+        },
+        [fetchChecks.pending.type]: (state) => {
             state.isLoading = true;
         },
-        checksFetchingSuccess(state, action: PayloadAction<IGetChecks[]>) {
-            state.isLoading = false;
-            state.error = '';
-            state.checks = action.payload
-            
-        },
-        checksFetchingFailure(state, action: PayloadAction<string>) {
+        [fetchChecks.rejected.type]: (state, action: PayloadAction<string>) => {
             state.isLoading = false;
             state.error = action.payload
         }

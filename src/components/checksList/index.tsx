@@ -1,17 +1,30 @@
 import React, { useEffect } from 'react'
 import { useAppDispatch, useAppSelector } from '../../hooks/redux'
 import { fetchChecks } from '../../store/reducers/ActionCreator';
+import Error from '../error';
+import Spinner from '../spinner';
+import './styles.css';
 
 const ChecksList = () => {
     const dispatch = useAppDispatch()
-    const { checks } = useAppSelector(state => state.checkReducer);
+    const { checks, isLoading, error } = useAppSelector(state => state.checkReducer);
 
     useEffect(() => {
         dispatch(fetchChecks())
     }, [])
 
   return (
-    <div>{JSON.stringify(checks, null, 2)}</div>
+    <div>
+        {isLoading && <Spinner />}
+        {error && <Error />}
+        <div className='checksTableWrapper'>
+            {JSON.stringify(checks)}
+            {/* {checks && checks.map((key, item) => (
+                <div>{item}</div>
+            ))} */}
+        </div>
+        
+    </div>
   )
 }
 
