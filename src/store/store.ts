@@ -1,13 +1,17 @@
-import { combineReducers, configureStore } from "@reduxjs/toolkit";
+import { combineReducers, configureStore, getDefaultMiddleware } from "@reduxjs/toolkit";
+import { chequeApi } from "../services/ChequesService";
 import checkReducer from './reducers/GetChecksSlice'
 
 const rootReducer = combineReducers({
-    checkReducer
+    checkReducer,
+    [chequeApi.reducerPath]: chequeApi.reducer
 });
 
 export const setupStore = () => {
     return configureStore({
-        reducer: rootReducer
+        reducer: rootReducer,
+        middleware: (getDefaultMiddleware) =>
+            getDefaultMiddleware().concat(chequeApi.middleware)
     })
 }
 
