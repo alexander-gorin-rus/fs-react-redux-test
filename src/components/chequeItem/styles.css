@@ -1,0 +1,25 @@
+.chequeItemWrapper{
+    display: flex;
+    border: 2px solid rgb(0, 255, 242);
+    justify-content: space-between;
+}
+
+.chequeItem{
+    border: 1px solid red;
+}
+
+.goodsWrapper{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid blue;
+}
+
+.itemWrapper{
+    display: flex;
+    border: 1px solid green;
+}
+
+.item{
+    border: 1px solid black;
+    width: 80px;
+}
