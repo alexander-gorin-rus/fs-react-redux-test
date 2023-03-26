@@ -18,7 +18,7 @@ export const fetchChecks = createAsyncThunk(
     'cheques/fetchAll',
     async (_, thunkAPI) => {
         try {
-            const response = await axios.get<IGetChecks[]>('/datasss.json')
+            const response = await axios.get<IGetChecks>('/data.json')
             return response.data;
         } catch (error) {
             return thunkAPI.rejectWithValue('Приносим свои извенения, но что-то пошло не так!')

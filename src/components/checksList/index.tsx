@@ -9,6 +9,8 @@ const ChecksList = () => {
     const dispatch = useAppDispatch()
     const { checks, isLoading, error } = useAppSelector(state => state.checkReducer);
 
+    //const {dateReg} = checks
+
     useEffect(() => {
         dispatch(fetchChecks())
     }, [])
