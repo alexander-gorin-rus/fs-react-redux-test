@@ -23,6 +23,7 @@ const ChequeItem: FC<IChequeProps> = ({ cheque: {
 
   return (
     <div className='chequeItemWrapper'>
+      {JSON.stringify(dateReg)}
       <div className='chequeItem'>{dateReg}</div>
       <div className='chequeItem'>{kioskName}</div>
       <div className='chequeItem'>{chequeType === 0 ? 'Продажа' : 'Возврат'}</div>
