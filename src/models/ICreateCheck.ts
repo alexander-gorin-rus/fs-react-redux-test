@@ -1,7 +1,7 @@
 export interface ICreateCheck {
     dateReg: Date;
     kioskName: string;
-    chequeType: number;
+    chequeType: 1 | 2;
     payStatus: boolean;
     paySum: number;
     sum: number;

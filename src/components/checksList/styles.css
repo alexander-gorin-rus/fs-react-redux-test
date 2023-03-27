@@ -3,12 +3,13 @@
     margin: auto;
     width: 90vw;
     padding: 10px;
+    height: 400px;
+    overflow: auto;
 }
 
 .chequeHeader{
     display: flex;
     width: 100%;
-    
     justify-content: space-between;
 }
 

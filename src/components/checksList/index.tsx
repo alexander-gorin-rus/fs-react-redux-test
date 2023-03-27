@@ -9,18 +9,11 @@ import Spinner from '../spinner';
 import './styles.css';
 
 const ChecksList = () => {
-  const { data = { data: { cheques: [] } } } = chequeApi.useFetchAllChequesQuery(5)
-  //const { data: cheques } = chequeApi.useFetchAllChequesQuery(5)
-    // const dispatch = useAppDispatch()
-    // const { checks, isLoading, error } = useAppSelector(state => state.checkReducer);
-
-    // useEffect(() => {
-    //     dispatch(fetchChecks())
-    // }, [])
+  const { data: cheques, isLoading, error } = chequeApi.useFetchAllChequesQuery(30)
 
   return (
     <div className='checksTableWrapper'>
-      <div className='chequeHeader'>
+      {/* <div className='chequeHeader'>
         <span className='headerItem'>Дата покупки</span>
         <span className='headerItem'>Киоск</span>
         <span className='headerItem'>Тип</span>
@@ -29,9 +22,11 @@ const ChecksList = () => {
         <span className='headerItem'>Сумма</span>
         <span className='headerItem'>Кол-во товара</span>
         <span className='headerItem'>Товары</span>
-      </div>
+      </div> */}
       <div className='chequesList'>
-        {data.data.cheques.map((cheque: IGetChecks) => (
+        {isLoading && <Spinner />}
+        {error && <Error />}
+        {cheques?.map((cheque: IGetChecks) => (
           <ChequeItem key={cheque.uid} cheque={cheque} />
         ))}
       </div>

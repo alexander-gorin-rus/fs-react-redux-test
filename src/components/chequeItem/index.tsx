@@ -23,7 +23,10 @@ const ChequeItem: FC<IChequeProps> = ({ cheque: {
 
   return (
     <div className='chequeItemWrapper'>
-      <div className='chequeItem'>{dateReg}</div>
+      <div className='chequeItem'>
+      <span className='headerItem'>Дата покупки</span>
+        {dateReg}
+      </div>
       <div className='chequeItem'>{kioskName}</div>
       <div className='chequeItem'>{chequeType === 0 ? 'Продажа' : 'Возврат'}</div>
       {pays.map((item) => (

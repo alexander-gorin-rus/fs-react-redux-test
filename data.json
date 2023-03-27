@@ -1,8 +1,4 @@
 {
-  "code": 0,
-  "info": "Получены данные",
-  "data": {
-    "pagination": { "rowCount": 10, "pageNum": 1, "pageCount": 5 },
     "cheques": [
       {
         "pays": [
@@ -624,5 +620,4 @@
         "isTest": ""
       }
     ]
-  }
 }
