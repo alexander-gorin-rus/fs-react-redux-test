@@ -13,7 +13,7 @@ const ChecksList = () => {
 
   return (
     <div className='checksTableWrapper'>
-      <div className='chequeHeader'>
+      {/* <div className='chequeHeader'>
         <span className='headerItem'>Дата покупки</span>
         <span className='headerItem'>Киоск</span>
         <span className='headerItem'>Тип</span>
@@ -22,7 +22,7 @@ const ChecksList = () => {
         <span className='headerItem'>Сумма</span>
         <span className='headerItem'>Кол-во товара</span>
         <span className='headerItem'>Товары</span>
-      </div>
+      </div> */}
       <div className='chequesList'>
         {isLoading && <Spinner />}
         {error && <Error />}
