@@ -14,15 +14,16 @@ export const chequeApi = createApi({
                 }
             })
         }),
-        createCheque: build.mutation<IChequeForm, IChequeForm>({
+        createCheque: build.mutation<IChequeForm, Partial<IChequeForm>>({
             query: (cheque) => ({
                 url: 'cheques',
                 method: 'POST',
-                body: cheque
+                cheque
             })
-        })
+        }),
+        getCheque: build.query<IChequeForm, number>({
+            query: (id) => `cheques/${id}`,
+          }),
     })
 });
-
-console.log('checkApi', chequeApi);
 

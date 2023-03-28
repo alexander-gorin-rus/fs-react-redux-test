@@ -18,21 +18,21 @@ const ChequeFom: FC = () => {
         resolver: joiResolver(createChequeSchema),
         defaultValues: {
             pays: {
-              kioskUid: '',//
-              uid: '',//
-              chequeHeadUid: '',//?????????????
-              sum: 0,//
-              payType: 0,//
-              info: '',//
+              kioskUid: '',
+              uid: '',
+              chequeHeadUid: '',
+              sum: 0,
+              payType: 0,
+              info: '',
               datePay: new Date()
             },
             positions: {
-              qRCode: '',//
-              name: '',//
-              quantity: 0,//
-              price: 0,//
-              sum: 0,//
-              nds: 0,//
+              qRCode: '',
+              name: '',
+              quantity: 0,
+              price: 0,
+              sum: 0,
+              nds: 0,
               nsp: 0,
               discount: 0,
               discountType: 0,
