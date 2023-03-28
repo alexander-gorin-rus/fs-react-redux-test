@@ -4,12 +4,13 @@ import ChecksList from './components/checksList';
 import ChequeFom from './components/chequeForm';
 
 function App() {
+
   const [showChequeFromModal, toggleChequeFromModal] = useState(false);
-  // const toggleChequePopup = () => setShowChequeFromModal(!showChequeFromModal);
+
   return (
     <div className="App">
       <ChecksList />
-      <div onClick={() => toggleChequeFromModal(!showChequeFromModal)}>
+      <div className='createChequeForm' onClick={() => toggleChequeFromModal(!showChequeFromModal)}>
         {showChequeFromModal ? (
           <span>Свернуть</span>
         ) : (
